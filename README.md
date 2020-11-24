@@ -15,5 +15,5 @@ Acceptable values for `architecture` are:
 
 Model weights are saved in the models directory and the screen buffers of every thousandth game are saved in the gif directory.
 
-The agents directory consists of modified code from [repo name] while the scenarios folder contains the doom game maps and configurations.
+The agents directory consists of modified code from [VizDoom-Keras-RL](https://github.com/flyyufelix/VizDoom-Keras-RL) while the scenarios folder contains the doom game maps and configurations.
 
