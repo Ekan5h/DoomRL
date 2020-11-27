@@ -167,7 +167,7 @@ class DoubleDQNAgent:
 
         # Only use the last trace for training
         target = self.model.predict(update_input) # 32x3
-        target_val = self.model.predict(update_target) # 32x3
+        target_val = self.target_model.predict(update_target) # 32x3
 
         for i in range(self.batch_size):
             a = np.argmax(target_val[i])
@@ -290,6 +290,10 @@ def trainDRQN(game, agent):
         if t % 10000 == 0:
             print("Now we save model")
             agent.model.save_weights("models/drqn.h5", overwrite=True)
+
+
+        if t % agent.update_target_freq == 0:
+            agent.update_target_model()
 
         # print info
         state = ""
